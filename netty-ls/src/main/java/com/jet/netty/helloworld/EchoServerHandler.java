@@ -19,6 +19,9 @@ public class EchoServerHandler extends SimpleChannelInboundHandler<HttpObject> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
+        ByteBuf in = (ByteBuf) msg;
+        System.out.println("Server received: " + in.toString(CharsetUtil.UTF_8));
+
         ByteBuf content = Unpooled.copiedBuffer("Hello World", CharsetUtil.UTF_8);
         DefaultFullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, content);
         response.headers().set(HttpHeaderNames.CONTENT_TYPE, HttpHeaderValues.TEXT_PLAIN);

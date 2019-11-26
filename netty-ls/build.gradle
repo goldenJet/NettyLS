@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.jet'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+/**
+ * 指定所使用的仓库，mavenCentral()表示使用中央仓库，
+ * 此刻项目中所需要的jar包都会默认从中央仓库下载到本地指定目录
+ * 配置mavenLocal()表示引入jar包的时候，先从本地仓库中找，没有再去中央仓库下载
+ */
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile ('junit:junit:4.12')
+    compile ('io.netty:netty-all:4.1.43.Final')
+}

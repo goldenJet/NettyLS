@@ -13,9 +13,9 @@ sourceCompatibility = 1.8
  * 此刻项目中所需要的jar包都会默认从中央仓库下载到本地指定目录
  * 配置mavenLocal()表示引入jar包的时候，先从本地仓库中找，没有再去中央仓库下载
  */
-
 repositories {
     mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
     mavenCentral()
 }
 

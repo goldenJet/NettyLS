@@ -1,4 +1,4 @@
-package com.jet.netty.helloworld;
+package com.jet.netty.helloworld.httpdemo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

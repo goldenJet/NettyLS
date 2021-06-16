@@ -19,13 +19,15 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
 //        ((ByteBuf)msg).release();
 
         // 数据打印
-        ByteBuf in = (ByteBuf) msg;
-
+        /*ByteBuf in = (ByteBuf) msg;
         try {
             System.out.println(in.toString(CharsetUtil.US_ASCII));
         } finally {
             in.release();
-        }
+        }*/
+
+        // 数据返回
+        ctx.writeAndFlush(msg);
 
     }
 
